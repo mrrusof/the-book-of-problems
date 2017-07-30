@@ -1,0 +1,25 @@
+<article class="problem">
+  <h3>
+    {{model.title}}
+  </h3>
+  <div class="problem-statement">
+    {{model.statement}}
+  </div>
+  <h3>
+    Check your solution
+  </h3>
+  <div class="check language">
+    Select language
+    <select>
+    {{#each model.languages as |language|}}
+      <option value="{{language.id}}">{{language.id}}</option>
+    {{/each}}
+    </select>
+  </div>
+  <div class="submit">
+    <input type="submit" />
+  </div>
+  <div>
+    <input type="text" />
+  </div>
+</article>

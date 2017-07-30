@@ -29,6 +29,9 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+
+    // Tweak for Mirage
+    ENV.apiNamespace = 'api';
   }
 
   if (environment === 'test') {
@@ -40,10 +43,13 @@ module.exports = function(environment) {
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
+
+    // Tweak for Mirage
+    ENV.apiNamespace = 'api';
   }
 
   if (environment === 'production') {
-
+    ENV.apiHost = 'http://localhost:3000';
   }
 
   return ENV;

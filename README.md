@@ -1,4 +1,4 @@
-# the-book-of-problems
+# the-book-of-problems [![Build Status](https://travis-ci.org/mrrusof/the-book-of-problems.svg?branch=master)](https://travis-ci.org/mrrusof/the-book-of-problems)
 
 This README outlines the details of collaborating on this Ember application.
 A short introduction of this app could easily go here.
