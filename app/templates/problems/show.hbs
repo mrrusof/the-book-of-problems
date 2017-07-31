@@ -1,25 +1,31 @@
 <article class="problem">
-  <h3>
+  <h2>
     {{model.title}}
-  </h3>
+  </h2>
   <div class="problem-statement">
     {{model.statement}}
   </div>
-  <h3>
-    Check your solution
-  </h3>
-  <div class="check language">
-    Select language
-    <select>
-    {{#each model.languages as |language|}}
-      <option value="{{language.id}}">{{language.id}}</option>
-    {{/each}}
+</article>
+
+<h3>
+  Check your solution
+</h3>
+<form>
+  <div class="form-group">
+    <label for="candidate-solution">Your code</label>
+    <textarea class="form-control" id="candidate-solution" rows="10"></textarea>
+  </div>
+  <div class="input-group pull-left">
+    <label for="language">Code is written in</label>
+    <select class="form-control" id="language">
+      <option value="" selected disabled>Select language</option>
+      {{#each model.languages as |language|}}
+        <option value="{{language.id}}">{{language.id}}</option>
+      {{/each}}
     </select>
   </div>
-  <div class="submit">
-    <input type="submit" />
+
+  <div class="input-group pull-right">
+    <button class="btn btn-success btn-lg" type="button">Check code</button>
   </div>
-  <div>
-    <input type="text" />
-  </div>
-</article>
+</form>

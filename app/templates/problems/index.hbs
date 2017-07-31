@@ -1,23 +1,20 @@
 {{#each model as |problem|}}
-  <article class="listing">
-    <h3>
-      {{#link-to "problems.show" problem}}
-      {{problem.title}}
-      {{/link-to}}
-    </h3>
-    <div class="detail summary">
-      {{problem.summary}}
-    </div>
-    <div class="detail submit">
-      {{#link-to "problems.show" problem}}
-      Check your solution
-      {{/link-to}}
-    </div>
-    <div class="detail solution">
-      <a href="{{problem.solution_url}}">
-      Read solution
-      </a>
-    </div>
-  </article>
+  <h2>
+    {{#link-to "problems.show" problem}}
+    {{problem.title}}
+    {{/link-to}}
+  </h2>
+  <div>
+    {{problem.summary}}
+  </div>
+  <div>
+    {{#link-to "problems.show" problem}}
+    Check your solution
+    {{/link-to}}
+  </div>
+  <div>
+    <a href="{{problem.solution_url}}">
+    Read our solution
+    </a>
+  </div>
 {{/each}}
-
