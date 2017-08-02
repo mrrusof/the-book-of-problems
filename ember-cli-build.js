@@ -7,6 +7,14 @@ module.exports = function(defaults) {
       'bootstrapVersion': 3,
       'importBootstrapFont': true,
       'importBootstrapCSS': true
+    },
+    codemirror: {
+      modes: [
+        'clike',
+        'ruby'
+      ],
+      keyMaps: ['emacs', 'vim'],
+      themes: ['neo']
     }
   });
 

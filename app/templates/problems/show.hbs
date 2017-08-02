@@ -7,25 +7,49 @@
   </div>
 </article>
 
+
 <h3>
   Check your solution
 </h3>
 <form>
-  <div class="form-group">
-    <label for="candidate-solution">Your code</label>
-    <textarea class="form-control" id="candidate-solution" rows="10"></textarea>
-  </div>
-  <div class="input-group pull-left">
-    <label for="language">Code is written in</label>
-    <select class="form-control" id="language">
-      <option value="" selected disabled>Select language</option>
-      {{#each model.languages as |language|}}
-        <option value="{{language.id}}">{{language.id}}</option>
-      {{/each}}
-    </select>
-  </div>
-
-  <div class="input-group pull-right">
-    <button class="btn btn-success btn-lg" type="button">Check code</button>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-9">
+        <div class="form-group">
+          <label for="code">Your code</label>
+            {{ivy-codemirror
+                options=(hash
+                  theme=theme
+                  mode=language
+                  keyMap=keyMap
+                  lineNumbers=lineNumbers
+                )
+                value=code
+                valueUpdated=(action (mut code))
+            }}
+        </div>
+      </div>
+      <div class="col-sm-3">
+        <div class="form-group">
+          <label class="control-label" for="language">Language</label>
+          <select class="form-control" id="language" onchange={{action (mut language) value="target.value"}}>
+            {{#each languages as |languageChoice|}}
+              <option selected={{eq language languageChoice.mode}} value="{{languageChoice.mode}}">{{languageChoice.name}}</option>
+            {{/each}}
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="control-label" for="keyMap">Editor key bindings</label>
+          <select class="form-control" id="keyMap" onchange={{action (mut keyMap) value="target.value"}}>
+            {{#each keyMaps as |keyMapChoice|}}
+              <option selected={{eq keyMap keyMapChoice}} value="{{keyMapChoice}}">{{keyMapChoice}}</option>
+            {{/each}}
+          </select>
+        </div>
+        <div class="input-group">
+          <button class="btn btn-success btn-lg" type="button" {{action "submitCode"}}>Check code</button>
+        </div>
+      </div>
+    </div>
   </div>
 </form>
