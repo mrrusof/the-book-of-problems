@@ -16,26 +16,12 @@ export default function() {
         solution_url: 'http://ruslanledesma.com/2017/04/13/merge-by-buffer.html',
     }];
 
-    let languages = [
-        {
-            id: 'ruby'
-        }, {
-            id: 'java'
-        }
-    ];
-
-    this.namespace = config.apiNamespace;
-
-    this.get('/languages', function() {
-        return languages;
-    });
-
-    this.get('/problems', function() {
+    this.get(config.theOfficialJournalHost + '/problems', function() {
         return problems;
     });
 
     // The following unconventional path is given by PostgREST.
-    this.get('/problems?id=eq.:problem_id', function(_db, request) {
+    this.get(config.theOfficialJournalHost + '/problems?id=eq.:problem_id', function(_db, request) {
         return problems.filter(function (e) { return e.id == request.params.problem_id; });
     });
 }
