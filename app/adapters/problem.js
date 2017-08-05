@@ -4,7 +4,7 @@ import config from '../config/environment';
 
 export default DS.RESTAdapter.extend({
 
-  host: config.theOfficialJournalHost,
+  host: config.theOfficialJournalHost
 
 }).extend(UrlTemplates, {
 
@@ -23,3 +23,4 @@ export default DS.RESTAdapter.extend({
   }
 
 });
+

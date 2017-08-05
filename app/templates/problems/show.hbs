@@ -20,7 +20,7 @@
             {{ivy-codemirror
                 options=(hash
                   theme=theme
-                  mode=language
+                  mode=mode
                   keyMap=keyMap
                   lineNumbers=lineNumbers
                 )
@@ -31,10 +31,10 @@
       </div>
       <div class="col-sm-3">
         <div class="form-group">
-          <label class="control-label" for="language">Language</label>
-          <select class="form-control" id="language" onchange={{action (mut language) value="target.value"}}>
-            {{#each languages as |languageChoice|}}
-              <option selected={{eq language languageChoice.mode}} value="{{languageChoice.mode}}">{{languageChoice.name}}</option>
+          <label class="control-label" for="judge">Language</label>
+          <select class="form-control" id="judge" onchange={{action "selectJudge" value="target.value"}}>
+            {{#each model.judges as |judgeChoice|}}
+              <option selected={{eq judge.id judgeChoice.id}} value="{{judgeChoice.id}}">{{judgeChoice.name}}</option>
             {{/each}}
           </select>
         </div>
