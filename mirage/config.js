@@ -24,4 +24,10 @@ export default function() {
     this.get(config.theOfficialJournalHost + '/problems?id=eq.:problem_id', function(_db, request) {
         return problems.filter(function (e) { return e.id == request.params.problem_id; });
     });
+
+    // TODO
+    this.post(config.theCourtroomHost + '/judges/:language/trial', function() {
+        return { ruling: "ACCEPTED",
+                 seconds: "0.0" };
+    });
 }
