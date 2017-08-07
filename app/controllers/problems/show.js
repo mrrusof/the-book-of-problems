@@ -2,23 +2,7 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   theme: 'neo',
-  code: `def e l, r, s, e_n
-  if l > 0
-    e (l - 1), (r + 1), (s + '('), e_n
-  end
-  if r > 0
-    e l, (r - 1), (s + ')'), e_n
-  end
-  if l == 0 and r == 0
-    e_n << s
-  end
-  return e_n
-end
-
-while true
-  n = readline.strip.to_i rescue break
-  puts e(n, 0, '', []).reverse
-end`,
+  code: '',
   mode: 'ruby',
   keyMap: 'emacs',
   lineNumbers: true,
