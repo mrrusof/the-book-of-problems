@@ -13,8 +13,8 @@ export default Ember.Controller.extend({
     'vim'
   ],
 
-  alertVisible: false,
-  alertType: 'alert-success',
+  rulingAlertVisible: false,
+  rulingAlertType: 'success',
   ruling: '',
 
   actions: {
@@ -26,18 +26,24 @@ export default Ember.Controller.extend({
     },
 
     submitCode() {
+
+      this.set('rulingAlertVisible', false);
+      this.set('loadingAlertVisible', true);
+
       this.store.findRecord('judge', document.getElementById('judge').value).then(judge => {
         judge.trial({ src: this.code,
                       problemId: this.model.id })
-             .then(response => {
-                 if(response.ruling === "ACCEPTED") {
-                   this.set('alertType', 'success');
-                 } else {
-                   this.set('alertType', 'danger');
-                 }
-                 this.set('alertVisible', true);
-                 this.set('ruling', response.ruling + ", ran for " + response.seconds + " seconds.");
-             });
+              .then(response => {
+                if(response.ruling === "ACCEPTED") {
+                  this.set('rulingAlertType', 'success');
+                } else {
+                  this.set('rulingAlertType', 'danger');
+                }
+                var r = response.ruling + ", ran for " + response.seconds + " seconds.";
+                this.set('ruling', r);
+                this.set('rulingAlertVisible', true);
+                this.set('loadingAlertVisible', false);
+              });
       });
     }
 

@@ -12,7 +12,11 @@
   Check your solution
 </h3>
 
-{{#bs-alert type=alertType visible=alertVisible fade=true}}
+{{#bs-alert type="info" visible=loadingAlertVisible dismissible=false}}
+  <img src="/assets/ajax-loader.gif" />
+  Checking your solution...
+{{/bs-alert}}
+{{#bs-alert type=rulingAlertType visible=rulingAlertVisible fade=true}}
   <p>{{ruling}}</p>
 {{/bs-alert}}
 
