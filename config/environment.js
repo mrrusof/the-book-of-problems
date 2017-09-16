@@ -45,6 +45,10 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
+    if (!!process.env.TOJ_HOST)
+      ENV.theOfficialJournalHost = process.env.TOJ_HOST;
+    if (!!process.env.TC_HOST)
+      ENV.theCourtroomHost = process.env.TC_HOST;
   }
 
   return ENV;

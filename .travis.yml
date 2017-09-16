@@ -19,3 +19,5 @@ install:
 
 script:
   - npm test
+  - docker login -u mrrusof -p $DOCKER_PWD
+  - make push
