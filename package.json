@@ -2,8 +2,8 @@
   "name": "the-book-of-problems",
   "version": "0.0.0",
   "description": "Small description for the-book-of-problems goes here",
-  "license": "MIT",
-  "author": "",
+  "license": "Copyright 2017 Ruslan Ledesma Garza",
+  "author": "Ruslan Ledesma Garza",
   "directories": {
     "doc": "doc",
     "test": "tests"
