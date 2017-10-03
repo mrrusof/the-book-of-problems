@@ -11,7 +11,8 @@ module.exports = function(defaults) {
     codemirror: {
       modes: [
         'clike',
-        'ruby'
+        'ruby',
+        'python'
       ],
       keyMaps: ['emacs', 'vim'],
       themes: ['neo']
