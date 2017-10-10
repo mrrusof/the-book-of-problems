@@ -1,9 +1,10 @@
 /* eslint-env node */
+'use strict';
 
 module.exports = function(environment) {
-  var ENV = {
+  let ENV = {
     modulePrefix: 'the-book-of-problems',
-    environment: environment,
+    environment,
     rootURL: '/',
     locationType: 'auto',
     theOfficialJournalHost: 'http://localhost:3000',

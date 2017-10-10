@@ -5,7 +5,7 @@ export default function() {
     let problems = [{
         id: 'all-balanced-parentheses-strings',
         title: 'All Balanced Parentheses Strings (Mirage)',
-        summary: 'Print all strings consisting of \`n\` balanced parentheses.',
+        summary: 'Print all strings consisting of `n` balanced parentheses.',
         statement: `Print all strings consisting of \`n\` balanced parentheses.
 
 For example, the strings consisting of three balanced parentheses are
@@ -77,7 +77,7 @@ The expected final state of \`P\` given \`S\` is the following.
 ![Expected Primary](http://ruslanledesma.com/assets/2017.04.13.expected-primary.png)
 
 The integer of position 9 in the final state is unspecified because
-we do not care about what\'s beyond the length of the result of the
+we do not care about what's beyond the length of the result of the
 merge.
 
 **Input.** The input to your function consists of a reference to the
