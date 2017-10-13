@@ -5,6 +5,9 @@
     {{/link-to}}
   </h2>
   <div>
+    <b>{{moment-format problem.timestamp 'YYYY-MM-DD'}}</b>
+  </div>
+  <div>
     {{markdown-to-html problem.summary}}
   </div>
   <div>
@@ -13,10 +16,10 @@
     {{/link-to}}
   </div>
   {{#if problem.solution_url }}
-    <div>
-      <a href="{{problem.solution_url}}">
-      Read our solution
-      </a>
-    </div>
+  <div>
+    <a href="{{problem.solution_url}}">
+    Read our solution
+    </a>
+  </div>
   {{/if}}
 {{/each}}

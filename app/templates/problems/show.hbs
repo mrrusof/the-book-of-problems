@@ -2,6 +2,9 @@
   <h2>
     {{model.title}}
   </h2>
+  <div class="timestamp">
+    <h4>Published on {{moment-format model.timestamp 'YYYY-MM-DD'}}</h4>
+  </div>
   <div class="problem-statement">
     {{markdown-to-html model.statement}}
   </div>
