@@ -12,9 +12,11 @@
     Check your solution
     {{/link-to}}
   </div>
-  <div>
-    <a href="{{problem.solution_url}}">
-    Read our solution
-    </a>
-  </div>
+  {{#if problem.solution_url }}
+    <div>
+      <a href="{{problem.solution_url}}">
+      Read our solution
+      </a>
+    </div>
+  {{/if}}
 {{/each}}
