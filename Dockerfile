@@ -1,4 +1,4 @@
-FROM httpd:2.4
+FROM httpd:2.4.25
 
 LABEL maintainer ruslanledesmagarza@gmail.com
 

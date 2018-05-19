@@ -14,7 +14,8 @@ module.exports = function(defaults) {
       modes: [
         'clike',
         'ruby',
-        'python'
+        'python',
+        'mllike'
       ],
       keyMaps: ['emacs', 'vim'],
       themes: ['neo']
