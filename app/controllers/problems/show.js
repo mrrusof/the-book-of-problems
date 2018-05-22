@@ -4,6 +4,8 @@ export default Ember.Controller.extend({
   theme: 'neo',
   code: '',
   mode: 'ruby',
+  language: 'Ruby',
+  notes: 'None',
   keyMap: 'emacs',
   lineNumbers: true,
 
@@ -22,6 +24,8 @@ export default Ember.Controller.extend({
     selectJudge(id) {
         this.store.findRecord('judge', id).then(judge => {
             this.set('mode', judge.get('codemirrormode'));
+            this.set('language', judge.get('name'));
+            this.set('notes', judge.get('notes'));
         });
     },
 
