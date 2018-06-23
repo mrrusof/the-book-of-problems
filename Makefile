@@ -2,8 +2,8 @@ DOCKER_SRC=Dockerfile dist $(shell find apache2 -type f -a \! -name '*~' -a \! -
 DIST_SRC=$(shell find app config public -type f -a -name .htaccess -o \! -name '*~' -a \! -name '.*')
 REPO=mrrusof/the-book-of-problems
 TAG=latest
-TOJ_HOST=http://thebookofproblems.com:3000
-TC_HOST=http://thebookofproblems.com:8080
+TOJ_HOST ?= http://thebookofproblems.com:3000
+TC_HOST ?= http://thebookofproblems.com:8080
 
 all: build
 
