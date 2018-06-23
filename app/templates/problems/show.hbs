@@ -3,7 +3,12 @@
     {{model.title}}
   </h2>
   <div class="timestamp">
-    <h4>Published on {{moment-format model.timestamp 'YYYY-MM-DD'}}</h4>
+    <h4>
+      Published on {{moment-format model.timestamp 'YYYY-MM-DD'}}
+      {{#if model.edited}}
+      , Edited on {{moment-format model.edited 'YYYY-MM-DD'}}
+      {{/if}}
+    </h4>
   </div>
   <div class="problem-statement">
     {{markdown-to-html model.statement}}
